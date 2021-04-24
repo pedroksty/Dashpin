@@ -47,6 +47,7 @@ export default function UserList() {
                 </Th>
                 <Th>Usuário</Th>
                 {isWideVersion &&  <Th>Data de cadastro</Th>}
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>
