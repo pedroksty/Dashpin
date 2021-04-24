@@ -8,7 +8,7 @@ interface ActiveLinkProps extends LinkProps {
 }
 
 export function ActiveLink({ children, shouldMatchExactHref = false,...rest}:ActiveLinkProps ) {
-  const { asPath } = useRouter()
+  const { asPath  } = useRouter()
 
   let isActive = false
 

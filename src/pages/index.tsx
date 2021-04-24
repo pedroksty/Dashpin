@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import {Button, Flex, Stack} from '@chakra-ui/react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -16,6 +17,8 @@ const signInFormSchema = yup.object().shape({
 })
 
 export default function SignIn() {
+  const router = useRouter()
+
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(signInFormSchema)
   })
@@ -27,7 +30,9 @@ export default function SignIn() {
   const handleSignIn: SubmitHandler<SignInFormData> = async ({email, password}) => {
     await new Promise(resolve => setTimeout(resolve, 200))
     
-    console.log(email, password)
+    
+
+    router.push('/dashboard')
 
   }
 
