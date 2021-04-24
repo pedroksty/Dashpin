@@ -1,5 +1,6 @@
 import { Flex, SimpleGrid, Box, Text, theme } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
+import { series1, series2, series3, series4, series5, series6 } from '../config/dashboard'
 import { Header } from "../components/Header/"
 import { SideBar } from '../components/SideBar/'
 
@@ -80,7 +81,7 @@ export default function Dashboard() {
             pb="4"
           >
             <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-            <Chart options={options} series={series} type="area" height={160} />
+            <Chart options={options} series={series1} type="area" height={160} />
 
           </Box>
 
@@ -92,7 +93,59 @@ export default function Dashboard() {
 
           >
             <Text fontSize="lg" mb="4">Taxa de abertura</Text>
-            <Chart options={options} series={series} type="area" height={160} />
+            <Chart options={options} series={series2} type="area" height={160} />
+
+
+          </Box>
+
+          <Box
+            p={["6", "8"]}
+            bg="gray.800"
+            borderRadius={8}
+            pb="4"
+
+          >
+            <Text fontSize="lg" mb="4">Taxa de ocupação</Text>
+            <Chart options={options} series={series3} type="area" height={160} />
+
+
+          </Box>
+
+          <Box
+            p={["6", "8"]}
+            bg="gray.800"
+            borderRadius={8}
+            pb="4"
+
+          >
+            <Text fontSize="lg" mb="4">Taxa de filtragem</Text>
+            <Chart options={options} series={series4} type="area" height={160} />
+
+
+          </Box>
+
+          <Box
+            p={["6", "8"]}
+            bg="gray.800"
+            borderRadius={8}
+            pb="4"
+
+          >
+            <Text fontSize="lg" mb="4">Taxa de licenciamento</Text>
+            <Chart options={options} series={series5} type="area" height={160} />
+
+
+          </Box>
+
+          <Box
+            p={["6", "8"]}
+            bg="gray.800"
+            borderRadius={8}
+            pb="4"
+
+          >
+            <Text fontSize="lg" mb="4">Taxa de transação</Text>
+            <Chart options={options} series={series6} type="area" height={160} />
 
 
           </Box>
