@@ -37,7 +37,11 @@ export function makeServer() {
       this.timing = 700
 
       this.get('/users', function (schema, request) {
-        const { page = 1, per_page = 10 } = request.params
+        console.log(request.requestHeaders)
+        const {  per_page = 10 } = request.params
+        const page = Number(request.requestHeaders.page)
+
+        console.log(`page: ${Number(request.requestHeaders.page)}`)
 
         const total = schema.all('user').length
 
